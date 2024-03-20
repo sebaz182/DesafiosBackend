@@ -32,20 +32,21 @@ console.log(manager.deleteProduct(9999));
 // Agrego un quinto producto
 console.log(manager.addProduct("Producto 5", "Descripción del producto 5", 500, "thumbnail4.jpg", "P005", 5000));
 
-// // Actualizo un producto
-// const productUpdate =     {
-//     "id": 100,
-//     "title": "Producto 1",
-//     "description": "Descripción del producto 1 v2   ",
-//     "price": 1000,
-//     "thumbnail": "thumbnail1++.jpg",
-//     "code": "P999",
-//     "stock": 5
-// }
+// Actualizo un producto
+const productUpdate =     {
+    "id": 1000,
+    "title": "Producto 1",
+    "description": "Descripción del producto 1 v2   ",
+    "price": 1000,
+    "thumbnail": "thumbnail1++.jpg",
+    "code": "P999",
+    "stock": 5
+}
 
-// console.log(manager.updateProduct(1, productUpdate));
-// // Actualizo producto no existente
-// console.log(manager.updateProduct(999, productUpdate));
+// Actualizo producto no existente
+console.log(manager.updateProduct(999, productUpdate));
+console.log(manager.updateProduct(1, productUpdate));
+
 
 // Muestro la tabla actualizada
 console.table(manager.getProducts());

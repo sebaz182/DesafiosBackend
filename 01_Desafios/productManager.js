@@ -87,22 +87,24 @@ class ProductManager {
     updateProduct(id, objetUpdate){
         let msg = `No encontramos el producto con id: ${id}`;
 
-        const product = this.#products.find(p=>p.id === id);
+        const index = this.#products.findIndex(p=>p.id === id);
 
-        if (product){
+        if (index !== -1){
             const {id, ...rest} = objetUpdate;
-            this.#products(id) = {...this.#products[id], ...rest};
+            this.#products[index] = {...this.#products[index], ...rest};
             this.#saveFile();
-            msg = `Producto id: ${id} fue actualizado`
+            msg = `Producto fue actualizado`
         }
+
+        return msg;
     }
 
     deleteProduct(id){
         let msg = `No encontramos el producto con id: ${id}`;
 
-        const product = this.#products.find(p=>p.id === id);
+        const index = this.#products.findIndex(p=>p.id === id);
 
-        if (product){
+        if (index !== -1){
             this.#products = this.#products.filter(p=> p.id !== id);
             this.#saveFile();
             msg = `Producto id: ${id} Eliminado!`
