@@ -1,5 +1,7 @@
-const { clear } = require("console");
-const ProductManager = require("./productManager");
+//const { clear } = require("console");
+// const ProductManager = require("./productManager");
+
+import ProductManager from "../src/productManager.js";
 
 const manager = new ProductManager();
 
